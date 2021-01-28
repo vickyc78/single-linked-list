@@ -10,23 +10,23 @@ A singly linked list is a type of linked list that is unidirectional, that is, i
 ####   nodemon or node app.js
 ####   mocha test
 
-2. How to use
+### 2. How to use
 
-- POST Add Node API
-  Use Case
+# - POST Add Node API
+###  Use Case
   To start adding node in the list or documents use this api it will return the JSON object.
 
-Request Attributes
-Content Type : JSON
+# Request Attributes
+ Content Type : JSON
 
-Body
-node:value
+# Body
+ node:value
 
-Response Codes & Messages
+# Response Codes & Messages
 200:Success
 500:Internal server error
 
-Request Curl
+# Request Curl
 curl --request POST \
  --url https://bfc78d39febe.ngrok.io//createNode \
  --header 'content-type: application/json' \
@@ -34,7 +34,7 @@ curl --request POST \
 "node":7
 }'
 
-Response Object
+# Response Object
 {
 "createdAt": "2021-01-28T14:25:22.995Z",
 "updatedAt": "2021-01-28T14:25:22.995Z",
@@ -43,45 +43,45 @@ Response Object
 "id": "6012c953e2b72a41377d2334"
 }
 
-- GET Length Of Node API
-  Use Case
+# - GET Length Of Node API
+###  Use Case
   To get the length of the list.
 
-Request Attributes
+# Request Attributes
 Content Type : JSON
 
-Response Codes & Messages
+# Response Codes & Messages
 200:Success
 500:Internal server error
 
-Request Curl
+# Request Curl
 curl --request GET \
  --url http://localhost:1337/lengthOfNode \
  --cookie sails.sid=s%253An74dP6g3Vxwq1Zef9DqfwPON8_SSPMo9.gUvVAZwzJ8UiaZW8yTMp18JL8O61WLTtGBokPF8btwA
 
-Response Object
+# Response Object
 {
 "lengthOfList": 3
 }
 
-- GET Get All Nodes API
-  Use Case
+# - GET Get All Nodes API
+###  Use Case
   To get the all nodes from the lists or documents.
 
-Request Attributes
+# Request Attributes
 Content Type : JSON
 
-Response Codes & Messages
+# Response Codes & Messages
 200:Success
 404:No Node Found
 500:Internal server error
 
-Request Curl
+# Request Curl
 curl --request GET \
  --url http://localhost:1337/getAllNodes \
  --cookie sails.sid=s%253An74dP6g3Vxwq1Zef9DqfwPON8_SSPMo9.gUvVAZwzJ8UiaZW8yTMp18JL8O61WLTtGBokPF8btwA
 
-Response Object
+# Response Object
 [
 {
 "createdAt": "2021-01-28T13:16:55.946Z",
@@ -92,18 +92,18 @@ Response Object
 }
 ]
 
-- POST order node API
-  Use Case
+# - POST order node API
+###  Use Case
   To get the order list in ascending and descending order use this api and pass node as a payload value and it will response array of JSON object.
 
-Request Attributes
+# Request Attributes
 Content Type : JSON
 
-Response Codes & Messages
+# Response Codes & Messages
 200:Success
 500:Internal server error
 
-Request Curl
+# Request Curl
 curl --request POST \
  --url http://localhost:1337/orderNode \
  --header 'content-type: application/json' \
@@ -112,7 +112,7 @@ curl --request POST \
 "order":1
 }'
 
-Response Object
+# Response Object
 [
 {
 "createdAt": "2021-01-28T13:16:55.946Z",
@@ -123,19 +123,19 @@ Response Object
 }
 ]
 
-- POST search node API
-  Use Case
+# - POST search node API
+###  Use Case
   To search the particular node in the list use this api and pass node as a payload value it will response array of JSON object.
 
-Request Attributes
+# Request Attributes
 Content Type : JSON
 
-Response Codes & Messages
+# Response Codes & Messages
 200:Success
 404:No Nodes Found For Given Search Node
 500:Internal server error
 
-Request Curl
+# Request Curl
 curl --request POST \
  --url http://localhost:1337/searchNode \
  --header 'content-type: application/json' \
@@ -144,7 +144,7 @@ curl --request POST \
 "node":5
 }'
 
-Response Object
+# Response Object
 [
 {
 "createdAt": "2021-01-28T13:17:11.813Z",
@@ -155,18 +155,18 @@ Response Object
 }
 ]
 
-- POST delete node API
-  Use Case
+# - POST delete node API
+###  Use Case
   To delete node list use this api.
 
-Request Attributes
+# Request Attributes
 Content Type : JSON
 
-Response Codes & Messages
+# Response Codes & Messages
 200:Success
 500:Internal server error
 
-Request Curl
+# Request Curl
 curl --request POST \
  --url http://localhost:1337/deleteNode \
  --header 'content-type: application/json' \
