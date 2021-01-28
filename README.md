@@ -2,12 +2,13 @@
 
 A singly linked list is a type of linked list that is unidirectional, that is, it can be traversed in only one direction from head to the last node.Each element in a linked list is called a node.A single node contains data and a pointer to the next node which helps in maintaining the structure of the list.The first node is called the head.
 
-1. Clone the repository,install node packages and run
-   //on local
-   git clone https://github.com/vickyc78/single-linked-list.git
-   cd single-linked-list
-   yarn install
-   nodemon or node app.js
+### 1. Clone the repository,install node packages,run and test command
+####   //on local
+####  git clone https://github.com/vickyc78/single-linked-list.git
+####   cd single-linked-list
+####   yarn install
+####   nodemon or node app.js
+####   mocha test
 
 2. How to use
 
