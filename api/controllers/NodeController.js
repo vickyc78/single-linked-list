@@ -66,7 +66,7 @@ module.exports = {
     Node.lengthOfNode({}, function(err, data) {
       console.log("EEEEEEEEEEEEEEEE", err, data);
       if (err) {
-        res.status(500).json({ message: "No Length Found" });
+        res.status(500).json({ message: "Internal server error" });
       } else {
         res.status(200).json({ lengthOfList: data });
       }
@@ -75,7 +75,9 @@ module.exports = {
   getAllNodes: function(req, res) {
     Node.getAllNode({}, function(err, data) {
       if (err) {
-        res.status(500).json({ message: "No Nodes Found" });
+        res.status(500).json({ message: "Internal server error" });
+      } else if (!data.length) {
+        res.status(404).json({ message: "No Node Found" });
       } else {
         res.status(200).json(data);
       }
@@ -93,11 +95,11 @@ module.exports = {
   searchNode: function(req, res) {
     Node.searchNode(req.body, function(err, data) {
       if (err) {
-        res
-          .status(500)
-          .json({ message: "No Nodes Found For Given Search Node" });
+        res.status(500).json({ message: "Internal server error" });
       } else if (!data.length) {
-        res.status(404).json({ message: "No Node Found" });
+        res
+          .status(404)
+          .json({ message: "No Nodes Found For Given Search Node" });
       } else {
         res.status(200).json(data);
       }
@@ -107,9 +109,7 @@ module.exports = {
     Node.deleteNode(req.body, function(err, data) {
       console.log("err,data", err, data);
       if (err) {
-        res
-          .status(404)
-          .json({ message: "No Node Found For Delete To Given Node" });
+        res.status(505).json({ message: "Internal server error" });
       } else {
         res.status(200).json(data);
       }
